@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lobster', cursive;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: radial-gradient(circle, rgba(69,67,67,1) 0%, rgba(16,16,17,1) 100%, rgba(15,14,14,1) 100%);
+}
+
+h1{
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 20vh;
+    font-size: 4em;
+    color: #fff;
+}
+.sous-titre{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 15vh;
+    font-size: 4em;
+    color: #fff;
+}
+.presentation{
+    width: 75vw;
+    font-size: 1.5em;
+    color: #fff;
+
+}
+.container{
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin-bottom: 15px;
+    transition: .5s cubic-bezier(.29,.54,.47,.24) ease-in;
+
+}
+.container .clip{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: cubic-bezier(.29,.54,.47,.24) .25s;
+}
+.container .clip.clip1{
+    clip-path: polygon(0 0, 30% 0, 30% 100%, 0 100%);
+    background: url(./benjamin_code.jpg);
+    background-size: cover;
+}
+.container .clip.clip2{
+    clip-path: polygon(30% 0, 60% 0, 60% 100%, 30% 100%);
+    background: url(./arristide_benoist.jpg);
+    background-size: cover;
+    
+}
+.container .clip.clip3{ 
+    clip-path: polygon(60% 0, 100% 0, 100% 100%, 60% 100%);
+    background: url(./nicolas_cannass.png);
+    background-size: cover;
+}
+.container:hover .clip{
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+}
+.container .clip:hover{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.contenu{
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    opacity: 0;
+    width: 70%;
+    padding: 20px;
+    overflow: hidden;
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    box-shadow: 25px 25px 65px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255,255,255,0.5);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    backdrop-filter: blur(5px);
+    color: white;
+    transition: .5s;
+}
+.container .clip.clip3 .contenu{
+    color: #000
+}
+
+.contenu p{
+    font-size: 0.7em;
+}
+.container .clip:hover .contenu{
+    bottom:0;
+    opacity: 1;
+}
+
+@media screen and (max-width: 645px) {
+    .sous-titre{
+        font-size: 3.5em;
+    }
+}
+@media screen and (max-width: 572px) {
+    .sous-titre{
+        font-size: 3em;
+    }
+}
